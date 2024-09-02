@@ -12,7 +12,7 @@ def router(raw_data, *args):
         elif key_1 == '-A':
             patternWriter.case_study1_and_case_study2(raw_data, key_1)
         elif key_1 == '-l':
-            res = patternWriter.case_study3_and_case_study4_case_study5_case_study6(raw_data, key_1, False)
+            res = patternWriter.case_study3_To_case_study9(raw_data, key_1, False)
             for i in res:
                 print(i)
     elif argument_count == 2:

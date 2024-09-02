@@ -18,3 +18,6 @@ For more details kindly refer the "Case Study.pdf" in the project directory.
 * Additional Files
   * README.md
   * requirements.txt
+## Data & Function Call Flow:
+>> pyls.py (main()->load_From_Json()-> 
+>  commandRouter.router()->patternWriter(multiple functions based on operation type)

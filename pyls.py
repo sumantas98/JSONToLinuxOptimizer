@@ -12,11 +12,16 @@ def load_From_Json():
 
 
 def main():
+    args = ''
     raw_data = load_From_Json()
     parser = argparse.ArgumentParser(description="Parsing Argument from Main")
-    parser.add_argument('args', nargs=argparse.REMAINDER, help="Positional Argument from Main")
+    parser.add_argument('args', nargs='*', help="Positional Argument from Main")
+    parser.add_argument('-A', action='store_true', help="A string argument")
     parsed_args = parser.parse_args()
-    args = parsed_args.args
+    if parsed_args.A:
+        args = ['-A']
+    else:
+        args = parsed_args.args
     commandRouter.router(raw_data, *args)
 
 

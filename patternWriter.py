@@ -6,6 +6,13 @@ def format_time(timestamp):
     return time.strftime("%b %d %H:%M", time.localtime(timestamp))
 
 
+def human_readable_size(size):
+    for unit in ['B', 'K', 'M', 'G', 'T']:
+        if size < 1024.0:
+            return f"{size:.1f}{unit}"
+        size /= 1024.0
+
+
 def convert_To_directory(json_data, ind=''):
     print(f"{ind}{json_data['name']}")
     if 'contents' in json_data:
@@ -24,7 +31,8 @@ def case_study1_and_case_study2(json_data, flag='N'):
         print(item['name'], end=' ')
 
 
-def case_study3_and_case_study4_case_study5_case_study6(json_data, flag, reverse=False, sort_t=False, filter_s=''):
+def case_study3_To_case_study9(json_data, flag, reverse=False, sort_t=False, filter_s='',
+                               size_s=''):
     contents = json_data.get('contents', [])
     # Case Study 5 Start
     if sort_t:
@@ -34,8 +42,10 @@ def case_study3_and_case_study4_case_study5_case_study6(json_data, flag, reverse
     for item in contents:
         if flag == '-l' and item['name'].startswith('.'):
             continue
-
-        if filter_s == 'dir':
+        elif size_s == 'B':
+            dt = f"{item['permissions']} {human_readable_size(item['size'])} {format_time(item['time_modified'])} {item['name']}"
+            result.append(dt)
+        elif filter_s == 'dir':
             if "." not in item['name'] and "LICENSE" not in item['name']:
                 dt = f"{item['permissions']} {item['size']} {format_time(item['time_modified'])} {item['name']}"
                 result.append(dt)

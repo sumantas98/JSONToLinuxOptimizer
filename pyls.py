@@ -20,6 +20,7 @@ def main():
     parser.add_argument('-l', action='store_true', help="l boolean argument")
     parser.add_argument('-r', action='store_true', help="r boolean argument")
     parser.add_argument('-t', action='store_true', help="Sort by time modified")
+    parser.add_argument('--filter', choices=['file', 'dir'], help="Filter it by 'file' or 'dir'")
     parsed_args = parser.parse_args()
     if parsed_args.A:
         args = ['-A']
@@ -29,9 +30,11 @@ def main():
             args = ['-l', '-r']
             if parsed_args.t:
                 args = ['-l', '-r', '-t']
+                if parsed_args.filter:
+                    args = ['-l', '-r', '-t', parsed_args.filter]
     else:
         args = parsed_args.args
-    print(args)
+
     commandRouter.router(raw_data, *args)
 
 

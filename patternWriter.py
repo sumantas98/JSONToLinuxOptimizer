@@ -23,19 +23,34 @@ def case_study1_and_case_study2(json_data, flag='N'):
         print(item['name'], end=' ')
 
 
-def case_study3_and_case_study4_study5(json_data, flag, reverse=False, sort_t=False):
+def case_study3_and_case_study4_case_study5_case_study6(json_data, flag, reverse=False, sort_t=False, filter=''):
     contents = json_data.get('contents', [])
+    # Case Study 5 Start
     if sort_t:
         contents = sorted(contents, key=lambda x: x['time_modified'], reverse=False)
+    # Case Study 5 end
     result = []
     for item in contents:
         if flag == '-l' and item['name'].startswith('.'):
             continue
-        dt = f"{item['permissions']} {item['size']} {format_time(item['time_modified'])} {item['name']}"
-        result.append(dt)
+
+        if filter == 'dir':
+            if "." not in item['name'] and "LICENSE" not in item['name']:
+                dt = f"{item['permissions']} {item['size']} {format_time(item['time_modified'])} {item['name']}"
+                result.append(dt)
+        elif filter == 'file':
+            if "." in item['name'] or "LICENSE" in item['name']:
+                dt = f"{item['permissions']} {item['size']} {format_time(item['time_modified'])} {item['name']}"
+                result.append(dt)
+
+        elif filter == 'folder':
+            raise "error: 'folder' is not a valid filter criteria. Available filters are 'dir' and 'file'"
+
+        else:
+            dt = f"{item['permissions']} {item['size']} {format_time(item['time_modified'])} {item['name']}"
+            result.append(dt)
+    # Case Study 4 Start
     if reverse:
-        for res in result[::-1]:
-            print(res)
+        return result[::-1]
     else:
-        for res in result:
-            print(res)
+        return result

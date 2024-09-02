@@ -19,6 +19,7 @@ def main():
     parser.add_argument('-A', action='store_true', help="A boolean argument")
     parser.add_argument('-l', action='store_true', help="l boolean argument")
     parser.add_argument('-r', action='store_true', help="r boolean argument")
+    parser.add_argument('-t', action='store_true', help="Sort by time modified")
     parsed_args = parser.parse_args()
     if parsed_args.A:
         args = ['-A']
@@ -26,6 +27,8 @@ def main():
         args = ['-l']
         if parsed_args.r:
             args = ['-l', '-r']
+            if parsed_args.t:
+                args = ['-l', '-r', '-t']
     else:
         args = parsed_args.args
     print(args)

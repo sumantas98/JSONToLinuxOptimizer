@@ -13,10 +13,14 @@ def router(raw_data, *args):
         elif key_1 == '-A':
             patternWriter.case_study1_and_case_study2(raw_data, key_1)
         elif key_1 == '-l':
-            patternWriter.case_study3_and_case_study4(raw_data, key_1, False)
+            patternWriter.case_study3_and_case_study4_study5(raw_data, key_1,)
     elif argument_count == 2:
         key_1, key_2 = args[0], args[1]
         if key_1 == '-l' and key_2 == '-r':
-            patternWriter.case_study3_and_case_study4(raw_data, key_1, True)
+            patternWriter.case_study3_and_case_study4_study5(raw_data, key_1, True)
+    elif argument_count == 3:
+        key_1, key_2, key_3 = args[0], args[1], args[2]
+        if key_1 == '-l' and key_2 == '-r' and key_3 == '-t':
+            patternWriter.case_study3_and_case_study4_study5(raw_data, key_1, True, True)
     else:
         pass

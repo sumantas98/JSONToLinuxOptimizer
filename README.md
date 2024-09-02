@@ -21,3 +21,8 @@ For more details kindly refer the "Case Study.pdf" in the project directory.
 ## Data & Function Call Flow:
 >> pyls.py (main()->load_From_Json()-> 
 >  commandRouter.router()->patternWriter(multiple functions based on operation type)
+##
+
+## Project Commit Details:
+* https://github.com/sumantas98/JSONToLinuxOptimizer/commits?author=sumantas98&since=2024-08-31&until=2024-09-02
+

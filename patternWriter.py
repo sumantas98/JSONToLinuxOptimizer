@@ -23,8 +23,10 @@ def case_study1_and_case_study2(json_data, flag='N'):
         print(item['name'], end=' ')
 
 
-def case_study3_and_case_study4(json_data, flag, reverse=False):
+def case_study3_and_case_study4_study5(json_data, flag, reverse=False, sort_t=False):
     contents = json_data.get('contents', [])
+    if sort_t:
+        contents = sorted(contents, key=lambda x: x['time_modified'], reverse=False)
     result = []
     for item in contents:
         if flag == '-l' and item['name'].startswith('.'):

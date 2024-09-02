@@ -17,7 +17,6 @@ def main():
     parser.add_argument('args', nargs=argparse.REMAINDER, help="Positional Argument from Main")
     parsed_args = parser.parse_args()
     args = parsed_args.args
-    print(args)
     commandRouter.router(raw_data, *args)
 
 

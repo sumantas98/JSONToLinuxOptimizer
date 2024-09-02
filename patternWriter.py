@@ -1,4 +1,5 @@
 import time
+import sys
 
 
 def format_time(timestamp):
@@ -23,7 +24,7 @@ def case_study1_and_case_study2(json_data, flag='N'):
         print(item['name'], end=' ')
 
 
-def case_study3_and_case_study4_case_study5_case_study6(json_data, flag, reverse=False, sort_t=False, filter=''):
+def case_study3_and_case_study4_case_study5_case_study6(json_data, flag, reverse=False, sort_t=False, filter_s=''):
     contents = json_data.get('contents', [])
     # Case Study 5 Start
     if sort_t:
@@ -34,17 +35,18 @@ def case_study3_and_case_study4_case_study5_case_study6(json_data, flag, reverse
         if flag == '-l' and item['name'].startswith('.'):
             continue
 
-        if filter == 'dir':
+        if filter_s == 'dir':
             if "." not in item['name'] and "LICENSE" not in item['name']:
                 dt = f"{item['permissions']} {item['size']} {format_time(item['time_modified'])} {item['name']}"
                 result.append(dt)
-        elif filter == 'file':
+        elif filter_s == 'file':
             if "." in item['name'] or "LICENSE" in item['name']:
                 dt = f"{item['permissions']} {item['size']} {format_time(item['time_modified'])} {item['name']}"
                 result.append(dt)
 
-        elif filter == 'folder':
-            raise "error: 'folder' is not a valid filter criteria. Available filters are 'dir' and 'file'"
+        elif filter_s == 'folder':
+            print(f"error: 'folder' is not a valid filter criteria. Available filters are 'dir' and 'file'")
+            sys.exit(1)
 
         else:
             dt = f"{item['permissions']} {item['size']} {format_time(item['time_modified'])} {item['name']}"

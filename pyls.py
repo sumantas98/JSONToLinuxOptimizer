@@ -20,7 +20,7 @@ def main():
     parser.add_argument('-l', action='store_true', help="l boolean argument")
     parser.add_argument('-r', action='store_true', help="r boolean argument")
     parser.add_argument('-t', action='store_true', help="Sort by time modified")
-    parser.add_argument('--filter', choices=['file', 'dir'], help="Filter it by 'file' or 'dir'")
+    parser.add_argument('--filter', choices=['file', 'dir', 'folder'], help="Filter it by 'file' or 'dir'")
     parsed_args = parser.parse_args()
     if parsed_args.A:
         args = ['-A']

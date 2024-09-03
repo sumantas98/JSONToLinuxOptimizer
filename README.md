@@ -27,7 +27,7 @@ For more details kindly refer the "Case Study.pdf" in the project directory.
 ##
 
 ## Project Commit Details:
-* https://github.com/sumantas98/JSONToLinuxOptimizer/commits?author=sumantas98&since=2024-08-31&until=2024-09-02
+* https://github.com/sumantas98/JSONToLinuxOptimizer/commits?author=sumantas98&since=2024-08-31&until=2024-09-03
 
 ## Test Case Result:
 * Test case result has been stored in the 'result.xml' file for future reference. The below command is required to generate the testcases along with report file.

@@ -13,11 +13,14 @@ For more details kindly refer the "Case Study.pdf" in the project directory.
   * pyls.py (main function)
   * commandRouter.py
   * patternWriter.py
+  * testcases/test_pyls.py
 * JSON File:
   * data.json
 * Additional Files
   * README.md
   * requirements.txt
+  * pyproject.toml
+  * results.xml
 ## Data & Function Call Flow:
 >> pyls.py (main()->load_From_Json()-> 
 >  commandRouter.router()->patternWriter(multiple functions based on operation type)

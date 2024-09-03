@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite name="pytest" errors="0" failures="0" skipped="0" tests="10" time="1.075" timestamp="2024-09-02T22:54:31.862268+05:30" hostname="DESKTOP-Q5MNQ42">
+        <testcase classname="testcases.test_pyls" name="test_ls" time="0.116" />
+        <testcase classname="testcases.test_pyls" name="test_ls_A" time="0.159" />
+        <testcase classname="testcases.test_pyls" name="test_ls_l" time="0.131" />
+        <testcase classname="testcases.test_pyls" name="test_ls_l_r" time="0.137" />
+        <testcase classname="testcases.test_pyls" name="test_ls_l_r_t" time="0.096" />
+        <testcase classname="testcases.test_pyls" name="test_ls_l_r_t_filter_dir" time="0.079" />
+        <testcase classname="testcases.test_pyls" name="test_ls_l_r_t_filter_file" time="0.078" />
+        <testcase classname="testcases.test_pyls" name="test_ls_with_path" time="0.075" />
+        <testcase classname="testcases.test_pyls" name="test_ls_human_readable" time="0.069" />
+        <testcase classname="testcases.test_pyls" name="test_ls_help" time="0.078" />
+    </testsuite>
+</testsuites>
